@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="milestone" content="Portfolio">
+  <!-- TODO: Replace this with your title -->
+  <title>Marcus Williams Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Custom Icons for Skills and Contact Sections -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <!-- Custom styles (these can extend the default Bootstrap styles) -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- TODO: Paste Navbar code and customize links -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #12486B;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="bi bi-house-heart h2"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mission-section">Mission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills-section">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-section">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero section -->
+  <section id="hero-section">
+    <div class="container">
+      <div class="profile_img">
+        <!-- Here I create a New Div for image with class name profile_img -->
+        <img src="img/marcus.jpg">
+      </div>
+      <h1>Marcus Williams</h1>
+      <h5>Coding One Step At A Time</h5>
+    </div>
+  </section>
+
+  <!-- Mission/Meet-me section -->
+  <section id="mission-section">
+    <div class="container">
+      <h1>Mission</h1>
+      <div class="row justify-content-center">
+        <div class="col-md">
+          <img src="img/kame_house.jpg" width="400px" height="200px">
+        </div>
+        <div class="col-md" id="misson-text-container">
+          <div id="mission-text">
+          My Mission is to make creative ideas onto a platform to express myself. I want to inspire others to pursue
+          thier goals whatever they may be. You can be a star!
+            I am a student at Central Michigan University who is majoring in Computer Science with a minor in Multimedia Design. I am on pace to graduate in May 2024 and hoping to find a career as a future software engineer or front-end web developer.
+          </div>        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills section -->
+  <section id="skills-section">
+    <div class="container">
+      <h1>Skills</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-xl-3 skill-container">
+          <i class="devicon-html5-plain" style="font-size: 150px;""></i>
+          <div>Able to create and format websites using HTML language</div>
+        </div>
+        <div class="col-md-6 col-xl-3 skill-container">
+          <i class="devicon-css3-plain" style="font-size: 150px;"></i>
+          <div>Able to style and create gorgeous websites using CSS</div>
+        </div>
+        <div class="col-md-6 col-xl-3 skill-container">
+          <i class="devicon-javascript-plain" style="font-size: 150px;"></i>
+          <div>Able to add variety and interactive portions into a website using JavaScript</div>
+        </div>
+        <div class="col-md-6 col-xl-3 skill-container">
+          <i class="devicon-cplusplus-plain" style="font-size: 150px;"></i>
+          <div>Able to create games, responsive AI, and more using C++</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact-section">
+    <div class="container">
+      <h1>Contact</h1>
+      <div class="row justify-content-center">
+        <div class="col-sm-4">
+          <a href="https://www.linkedin.com/in/mwilliams3000"><i class="bi bi-linkedin" style="font-size: 150px;""></i></a>
+        </div>
+        <div class="col-sm-4">
+          <a href="mailto:iammarcusrw2@gmail.com"><i class="bi bi-envelope" style="font-size: 150px;"></i></a>
+        </div>
+        <div class="col-sm-4">
+          <a href="https://github.com/willi25m"><i class="bi bi-github" style="font-size: 150px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+    <footer class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color: #12486B;">
+        © Marcus Williams 2023
+      </div>
+    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
