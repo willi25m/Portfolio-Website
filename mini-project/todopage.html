@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>To-Do List</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #22223B;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #4A4E69;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .header {
+      background-color: #4A4E69;
+      padding: 20px;
+      color: #F2E9E4;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    input {
+      width: 70%;
+      height: 45px;
+      font-size: 18px;
+      border: 2px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .addBtn {
+      width: 30%;
+      height: 45px;
+      background-color: #4A4E69;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.2s;
+    }
+
+    .addBtn:hover {
+      background-color: #F2E9E4;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      background: #9A8C98;
+      font-size: 18px;
+      transition: 0.2s;
+      border-bottom: 1px solid #ccc;
+    }
+
+    ul li:nth-child(odd) {
+      background: #C9ADA7;
+    }
+
+    ul li:hover {
+      background: #e6e6e6;
+    }
+
+    ul li.done {
+      background: #22223B;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #f44336;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>To-do List</h1>
+      <input type="text" id="todoTask" placeholder="Add a Task...">
+      <span id="addBtn" class="addBtn">Add</span>
+    </div>
+    <ul id="list">
+      <li>Take my exam</li>
+      <li>Buy some food</li>
+      <li>Change my sheets</li>
+      <li>Wash the dishes</li>
+      <li>Meditate</li>
+    </ul>
+  </div>
+  <script>
+    const closeButtons = document.querySelectorAll(".close");
+
+    // add a "close" button to each list item
+    document.querySelectorAll("li").forEach((li) => {
+      const span = document.createElement("SPAN");
+      span.className = "close";
+      span.textContent = "\u00D7";
+      li.appendChild(span);
+    });
+
+    // click on a close button to hide the list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+
+    // cross out a task when clicking on a list item
+    const list = document.getElementById("list");
+    list.addEventListener("click", (ev) => {
+      if (ev.target.tagName === "LI") {
+        ev.target.classList.toggle("done");
+      }
+    });
+
+    // Create a new list item when clicking on the "Add" button
+    document.getElementById("addBtn").addEventListener("click", () => {
+      const inputValue = document.getElementById("todoTask").value;
+      if (inputValue.trim() !== "") {
+        const li = document.createElement("li");
+        li.textContent = inputValue;
+        document.getElementById("list").appendChild(li);
+        document.getElementById("todoTask").value = "";
+
+        const span = document.createElement("SPAN");
+        span.className = "close";
+        span.textContent = "\u00D7";
+        li.appendChild(span);
+
+        // add a click event for the new close button
+        span.addEventListener("click", function () {
+          const div = this.parentElement;
+          div.style.display = "none";
+        });
+      } else {
+        alert("You must write something!");
+      }
+    });
+  </script>
+</body>
+
+</html>

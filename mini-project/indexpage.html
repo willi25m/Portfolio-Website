@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Index page</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<title>Password</title>
+
+<body>
+  <div class="center-box">
+  <h1>Index page</h1>
+  <h2>Welcome to the Index page! Here you will find information about everything!</h2>
+
+  <p>You will click the password btton and enter in the "password"<br> Once you are inside the next page, you will be greeted with a to-do list that you are free to customize.<br>You can add a task by typing in the input bar and clicking the add button on the right.<br>You can click each of the task that you have completed or use the delete button on the right side of each task.<br>Enjoy making your list! :)</p>
+
+  <!-- Button to trigger the modal -->
+  <button onclick="openModal()">Open Password Popup</button>
+  </div>
+  
+  <!-- The modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Enter the password</h2>
+      <input type="password" id="passwordInput" placeholder="Enter password">
+      <button onclick="checkPassword()">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to display the modal
+    function openModal() {
+      document.getElementById('myModal').style.display = 'block';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    // Function to check the password
+    function checkPassword() {
+      var password = document.getElementById('passwordInput').value;
+      // Check the password (replace 'your_password' with your actual password)
+      if (password === 'password') {
+        alert('Password is correct!');
+        closeModal();
+        window.location = "todopage.html";
+      } else {
+        alert('Incorrect password. Try again.');
+      }
+    }
+  </script>
+
+</body>
+
+</html>
